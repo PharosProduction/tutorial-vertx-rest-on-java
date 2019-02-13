@@ -17,7 +17,7 @@ public class Launcher extends io.vertx.core.Launcher {
 
   // Constants
 
-  private static final String configPath = "src/conf/config.json";
+  private static final String configPath = "conf/config.json";
 
   // Overrides
 
