@@ -1,0 +1,6 @@
+{
+  "http": {
+    "host": "localhost",
+    "port": 30000
+  }
+}

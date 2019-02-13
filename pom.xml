@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Package Info -->
+
+    <groupId>com.pharosproduction</groupId>
+    <artifactId>users</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+
+    <!-- Properties -->
+
+    <properties>
+        <stack.version>3.6.3</stack.version>
+
+        <!--overridden in each project packaged as a fat jar -->
+        <main.verticle/>
+    </properties>
+
+    <!-- Modules -->
+
+    <modules>
+        <module>common</module>
+        <module>api_mobile</module>
+    </modules>
+
+    <!-- Dependencies -->
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-dependencies</artifactId>
+                <version>${stack.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-service-discovery</artifactId>
+        </dependency>
+    </dependencies>
+
+    <!-- Build Settings -->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>9</source>
+                    <target>9</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
